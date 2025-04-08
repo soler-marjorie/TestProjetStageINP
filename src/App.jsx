@@ -1,17 +1,25 @@
-import { Outlet, Link } from 'react-router-dom';
+// Importation des modules nécessaires
 import './App.css'
+
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar'; 
+import Home from './Pages/Home';
+import About from './Pages/About';
 
 function App() {
 
   return (
     <>
-      <div>
-      <nav>
-        <Link to="/">Accueil</Link> | <Link to="/about">À propos</Link>
-      </nav>
-      <hr />
-      <Outlet /> 
-    </div>
+      <div className="font-sans">
+        <Navbar />
+
+        <div className="container mx-auto mt-8">
+          <Routes>
+            <Route path="/" element={<Home />} /> {/* Page d'accueil */}
+            <Route path="about" element={<About />} /> {/* Page À propos */}
+          </Routes>
+        </div>
+      </div>
     </>
   )
 }

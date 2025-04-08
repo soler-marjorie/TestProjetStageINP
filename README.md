@@ -22,23 +22,25 @@ On retrouve un fichier main.jsx (et non plus index.js) et App.jsx.
 1. ```npm install react-router-dom```
 2. Ajouter dans main.js : 
 ```import { BrowserRouter, Routes, Route } from 'react-router-dom';```
-3. Importer les pages et les intégrés au render avec Route
+3. Importer les pages et les intégrés au render avec Route dans app.js
 ```
 import App from './App.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
-);
+return (
+    <>
+        <div>
+            <nav>
+                <Link to="/">Accueil</Link> | <Link to="/about">À propos</Link>
+            </nav>
+            
+            <hr />
+            <Outlet /> 
+        </div>
+    </>
+)
 ```
 
 ## Création des dossiers (Vite ne le fait pas automatiquement)
-Dans src créer les dossiers Pages et Composants.
+Dans src créer les dossiers Pages et Composants puis créer les pages à intégrées dans les link de la route.
