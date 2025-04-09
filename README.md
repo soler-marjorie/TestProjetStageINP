@@ -44,3 +44,7 @@ return (
 
 ## Création des dossiers (Vite ne le fait pas automatiquement)
 Dans src créer les dossiers Pages et Composants puis créer les pages à intégrées dans les link de la route.
+
+
+## Ligne de commande pour contourner ce problème en forçant l'installation de circle-packing
+npm install @nivo/circle-packing @nivo/core d3 --legacy-peer-deps
